@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+  head
+    title= Megaspace
+    link(rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cyborg/bootstrap.min.css")
+    link(rel="stylesheet" href="css/style.css")
+    script(src="components/angular/angular.min.js")
+    script(src="components/jquery/dist/jquery.min.js")
+    script(src="components/bootstrap/dist/js/bootstrap.min.js")
+    script(src="js/app.min.js")
+  body
+    .container-fluid
+      .contentSection.col-lg-4
+        .row
+          .col-lg-12
+            h1 Megaspace
+        .row
+          .col-lg-12
+            form.form-horizontal
+              fieldset
+                legend Legend
+                .form-group
+                  label.col-lg-2.control-label(for="inputEmail") Email
+                  .col-lg-10
+                    input#inputEmail.form-control(type="text" placeholder="Email")
+                .form-group
+                  label.col-lg-2.control-label(for="inputPassword") Password
+                  .col-lg-10
+                    input#inputPassword.form-control(type="password" placeholder="Password")

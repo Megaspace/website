@@ -1,0 +1,8 @@
+default:
+  server:
+    port: 8004
+  enableLogging: true
+test:
+  server:
+    port: 8104
+  enableLogging: false
