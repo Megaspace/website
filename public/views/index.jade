@@ -2,9 +2,8 @@ doctype html
 html(lang="en" ng-app="app")
   head
     title Megaspace
-    link(rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css")
     link(rel="stylesheet" href="components/flexboxgrid/dist/flexboxgrid.min.css")
-    link(rel="stylesheet" href="css/cyborg.css")
+    link(rel="stylesheet" href="css/bootstrap-cyborg.min.css")
     link(rel="stylesheet" href="css/style.css")
     script(src="components/angular/angular.min.js")
     script(src="components/angular-cookies/angular-cookies.js")
@@ -29,5 +28,6 @@ html(lang="en" ng-app="app")
                 input#inputPassword.form-control(type="password" placeholder="Password" ng-model="password")
               .form-group
                 span.pull-left.text-danger(ng-show="authFailed") Authentication failed
+                span.pull-left.text-danger(ng-show="serverOffline") Login server offline, please try again later
                 button.btn.btn-primary.pull-right(type="submit") Submit
                         

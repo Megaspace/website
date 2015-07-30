@@ -24,6 +24,10 @@ tr.disabled {
 .form-control {
   border-radius: 0;
 }
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0;
+}
 .fullscreen {
   position: absolute;
   top: 0;
@@ -44,10 +48,6 @@ tr.disabled {
 #loginBox {
   width: 400px;
 }
-#loginBox form {
-  width: 90%;
-  margin-left: 5%;
-}
 #loginBox label{
   width: 20%;
   float: left;
@@ -57,4 +57,7 @@ tr.disabled {
   width: 80%;
   float: left;
   padding-right: 15px;
+}
+#loginBox span{
+  padding-top: 18px;
 }
