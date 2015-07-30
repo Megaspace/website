@@ -1,5 +1,6 @@
 express = require 'express'
 bodyParser = require 'body-parser'
+cookieParser = require 'cookie-parser'
 morgan = require 'morgan'
 Q = require 'q'
 
@@ -8,15 +9,25 @@ class Server
     @app = express()
     @app.use bodyParser.urlencoded extended: false
     @app.use bodyParser.json()
+    @app.use cookieParser()
     @app.use morgan 'dev' if settings.enableLogging
 
-    @app.use(express.static('public'));
-    @app.set('view engine', 'jade');
-    @app.set('views', 'public/views')
+    @app.use express.static('public')
+    @app.set 'view engine', 'jade'
+    @app.set 'views', 'public/views'
+    @app.use require('./middleware/decodeToken')(settings.secret)
 
-    @app.get '/', (req, res) -> res.render 'index', title: 'Hey', message: 'Hello there!'
+    @app.get '/', (req, res) ->
+      if req.decoded
+        res.redirect '/game'
+      else
+        res.render 'index'
 
-    #@app.use '/authenticate', require('./endpoints/authenticate')(settings.secret)
+    @app.get '/game', (req, res) ->
+      if req.decoded
+        res.render 'game'
+      else
+        res.redirect '/'
 
   start: (port) ->
     deferred = Q.defer()

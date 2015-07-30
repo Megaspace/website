@@ -1,8 +1,9 @@
 default:
   server:
-    port: 8004
+    port: 8001
   enableLogging: true
+  secret: lookitsnotanelephantitsabloodycat
 test:
   server:
-    port: 8104
+    port: 8101
   enableLogging: false

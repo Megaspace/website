@@ -1,30 +1,33 @@
 doctype html
-html(lang="en")
+html(lang="en" ng-app="app")
   head
-    title= Megaspace
+    title Megaspace
     link(rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css")
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cyborg/bootstrap.min.css")
+    link(rel="stylesheet" href="components/flexboxgrid/dist/flexboxgrid.min.css")
+    link(rel="stylesheet" href="css/cyborg.css")
     link(rel="stylesheet" href="css/style.css")
     script(src="components/angular/angular.min.js")
+    script(src="components/angular-cookies/angular-cookies.js")
+    script(src="components/angular-jwt/dist/angular-jwt.min.js")
     script(src="components/jquery/dist/jquery.min.js")
     script(src="components/bootstrap/dist/js/bootstrap.min.js")
     script(src="js/app.min.js")
-  body
-    .container-fluid
-      .contentSection.col-lg-4
-        .row
-          .col-lg-12
-            h1 Megaspace
-        .row
-          .col-lg-12
-            form.form-horizontal
-              fieldset
-                legend Legend
-                .form-group
-                  label.col-lg-2.control-label(for="inputEmail") Email
-                  .col-lg-10
-                    input#inputEmail.form-control(type="text" placeholder="Email")
-                .form-group
-                  label.col-lg-2.control-label(for="inputPassword") Password
-                  .col-lg-10
-                    input#inputPassword.form-control(type="password" placeholder="Password")
+    
+  body(ng-controller="LoginController as login")
+    
+    #loginPage.fullscreen
+      .absolute-center
+        #loginBox.well
+          form.form-horizontal(ng-submit="login()")
+            fieldset
+              legend Login
+              .form-group
+                label.control-label(for="inputEmail") Email
+                input#inputEmail.form-control(type="text" placeholder="Email" ng-model="email")
+              .form-group
+                label.control-label(for="inputPassword") Password
+                input#inputPassword.form-control(type="password" placeholder="Password" ng-model="password")
+              .form-group
+                span.pull-left.text-danger(ng-show="authFailed") Authentication failed
+                button.btn.btn-primary.pull-right(type="submit") Submit
+                        

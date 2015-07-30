@@ -6,6 +6,9 @@
   ],
   "dependencies": {
     "angular": "~1.4.3",
-    "bootstrap": "~3.3.5"
+    "bootstrap": "~3.3.5",
+    "flexboxgrid": "~6.2.0",
+    "angular-cookies": "~1.4.3",
+    "angular-jwt": "~0.0.9"
   }
 }
