@@ -1,2 +1,2 @@
 angular
-  .module 'app', ['ngCookies', 'angular-jwt']
+.module 'app', ['ngCookies', 'angular-jwt']

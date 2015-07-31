@@ -9,6 +9,7 @@
     "bootstrap": "~3.3.5",
     "flexboxgrid": "~6.2.0",
     "angular-cookies": "~1.4.3",
-    "angular-jwt": "~0.0.9"
+    "angular-jwt": "~0.0.9",
+    "toastr": "~2.1.1"
   }
 }

@@ -3,6 +3,7 @@ html(lang="en" ng-app="app")
   head
     title Megaspace
     link(rel="stylesheet" href="components/flexboxgrid/dist/flexboxgrid.min.css")
+    link(rel="stylesheet" href="components/toastr/toastr.min.css")
     link(rel="stylesheet" href="css/bootstrap-cyborg.min.css")
     link(rel="stylesheet" href="css/style.css")
     script(src="components/angular/angular.min.js")
@@ -10,9 +11,10 @@ html(lang="en" ng-app="app")
     script(src="components/angular-jwt/dist/angular-jwt.min.js")
     script(src="components/jquery/dist/jquery.min.js")
     script(src="components/bootstrap/dist/js/bootstrap.min.js")
+    script(src="components/toastr/toastr.min.js")
     script(src="js/app.min.js")
     
-  body(ng-controller="LoginController as login")
+  body(ng-controller="LoginController")
     
     #loginPage.fullscreen
       .absolute-center
@@ -20,14 +22,12 @@ html(lang="en" ng-app="app")
           form.form-horizontal(ng-submit="login()")
             fieldset
               legend Login
-              .form-group
+              .form-group(ng-class="{'has-error': loginFailed}")
                 label.control-label(for="inputEmail") Email
-                input#inputEmail.form-control(type="text" placeholder="Email" ng-model="email")
-              .form-group
+                input#inputEmail.form-control(type="text" placeholder="Email" ng-model="email" required)
+              .form-group(ng-class="{'has-error': loginFailed}")
                 label.control-label(for="inputPassword") Password
-                input#inputPassword.form-control(type="password" placeholder="Password" ng-model="password")
+                input#inputPassword.form-control(type="password" placeholder="Password" ng-model="password" required)
               .form-group
-                span.pull-left.text-danger(ng-show="authFailed") Authentication failed
-                span.pull-left.text-danger(ng-show="serverOffline") Login server offline, please try again later
                 button.btn.btn-primary.pull-right(type="submit") Submit
                         

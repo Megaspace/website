@@ -7,6 +7,9 @@
   -khtml-user-select: none; /* webkit (konqueror) browsers */
   -ms-user-select: none; /* IE10+ */
 }
+body {
+  margin-top: 50px;
+}
 tr.disabled {
   color: #444444;
 }
@@ -34,6 +37,29 @@ tr.disabled {
   bottom: 0;
   left: 0;
   right: 0;
+}
+.nav .avatar,
+.nav .username {
+  margin-right: 5px;
+}
+.navbar {
+  border-radius: 0;
+  padding-right: 15px;
+}
+.toast {
+  background-color: #2a9fd6;
+}
+.toast-success {
+  background-color: #77b300;
+}
+.toast-error {
+  background-color: #cc0000;
+}
+.toast-info {
+  background-color: #9933cc;
+}
+.toast-warning {
+  background-color: #ff8800;
 }
 .well {
   border-radius: 0;
