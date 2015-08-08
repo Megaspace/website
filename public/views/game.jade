@@ -1,10 +1,11 @@
 doctype html
-html(lang="en" ng-app="app")
+html(lang="en" ng-app="game")
   head
     title Megaspace
     link(rel="stylesheet" href="components/bootstrap/dist/css/bootstrap.min.css")
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cyborg/bootstrap.min.css")
     link(rel="stylesheet" href="components/flexboxgrid/dist/flexboxgrid.min.css")
+    link(rel="stylesheet" href="components/toastr/toastr.min.css")
+    link(rel="stylesheet" href="css/bootstrap-cyborg.min.css")
     link(rel="stylesheet" href="css/style.css")
     script(src="components/angular/angular.min.js")
     script(src="components/angular-cookies/angular-cookies.js")
@@ -13,19 +14,18 @@ html(lang="en" ng-app="app")
     script(src="components/bootstrap/dist/js/bootstrap.min.js")
     script(src="components/toastr/toastr.min.js")
     script(src="js/app.min.js")
+    
   body
     .nav.navbar.navbar-inverse.navbar-fixed-top
       .navbar-header
         a.navbar-brand Megaspace
       ul.nav.navbar-nav.navbar-right
-        li.dropdown
+        li.dropdown(ng-controller="UserMenuController")
           a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-expanded="false") 
             span.glyphicon.glyphicon-user.avatar
-            span.username USERNAME
+            span.username {{ username }} 
             span.caret
-          ul.dropdown-menu(role="menu" ng-controller="UserMenuController")
-            li
-              a(href="#") Profile
+          ul.dropdown-menu(role="menu")
             li.divider(role="separator")
             li
               a(href="#" ng-click="logout()") Logout

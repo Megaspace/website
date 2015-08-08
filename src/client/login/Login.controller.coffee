@@ -1,5 +1,5 @@
 angular
-.module 'app'
+.module 'login'
 .controller 'LoginController',
   [
     '$scope', '$http', '$window', '$cookies', 'jwtHelper',

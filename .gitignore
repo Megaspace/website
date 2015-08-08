@@ -28,3 +28,5 @@ node_modules
 
 # Bower components
 public/components
+
+.DS_Store
