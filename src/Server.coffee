@@ -14,7 +14,7 @@ class Server
 
     @app.use express.static('public')
     @app.set 'view engine', 'jade'
-    @app.set 'views', 'public/views'
+    @app.set 'views', '../public/views'
     @app.use require('./middleware/decodeToken')(settings.secret)
 
     @app.get '/', (req, res) ->
