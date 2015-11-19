@@ -1,5 +1,5 @@
 {
-  "name": "megaspace-website",
+  "name": "website",
   "version": "0.0.0",
   "description": "Website for megaspace game.",
   "main": "src/app.coffee",
