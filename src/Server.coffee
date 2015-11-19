@@ -13,7 +13,7 @@ class Server
     @app.use cookieParser()
     @app.use morgan 'dev' if settings.enableLogging
 
-    @app.use express.static('public')
+    @app.use express.static path.join(__dirname, '..', 'public')
     @app.set 'view engine', 'jade'
     @app.set 'views', path.join(__dirname, '..', 'public', 'views')
     @app.use require('./middleware/decodeToken')(settings.secret)
