@@ -1,3 +1,4 @@
+path = require 'path'
 express = require 'express'
 bodyParser = require 'body-parser'
 cookieParser = require 'cookie-parser'
@@ -14,7 +15,7 @@ class Server
 
     @app.use express.static('public')
     @app.set 'view engine', 'jade'
-    @app.set 'views', '../public/views'
+    @app.set 'views', path.join(__dirname, '..', 'public', 'views')
     @app.use require('./middleware/decodeToken')(settings.secret)
 
     @app.get '/', (req, res) ->
