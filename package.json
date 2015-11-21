@@ -15,6 +15,7 @@
     "jsonwebtoken": "^5.0.4",
     "morgan": "^1.6.1",
     "q": "^1.4.1",
+    "service-registry-js": "github:megaspace/service-registry-js",
     "yaml-config": "^0.3.0"
   },
   "devDependencies": {

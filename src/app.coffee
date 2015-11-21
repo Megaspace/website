@@ -1,3 +1,5 @@
+require('service-registry-js') 'website'
+
 path = require 'path'
 config = require 'yaml-config'
 settings = config.readConfig path.join(__dirname, '..', 'config.yaml')
