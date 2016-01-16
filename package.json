@@ -1,25 +1,25 @@
 {
   "name": "website",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Website for megaspace game.",
-  "main": "src/app.coffee",
+  "main": "src/app.js",
   "scripts": {
-    "test": "mocha -R spec --compilers coffee:coffee-script/register --require should"
+    "test": "mocha -R spec"
   },
   "author": "Nick Lanng",
   "dependencies": {
+    "bluebird": "^3.1.1",
     "body-parser": "^1.13.2",
     "cookie-parser": "^1.3.5",
     "express": "^4.13.1",
     "jade": "^1.11.0",
     "jsonwebtoken": "^5.0.4",
     "morgan": "^1.6.1",
-    "q": "^1.4.1",
     "service-registry-js": "github:megaspace/service-registry-js",
+    "use-strict": "^1.0.1",
     "yaml-config": "^0.3.0"
   },
   "devDependencies": {
-    "coffee-script": "^1.9.3",
     "gulp": "^3.9.0",
     "gulp-develop-server": "^0.4.3",
     "gulp-mocha": "^2.1.2",
