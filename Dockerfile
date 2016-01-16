@@ -2,6 +2,6 @@ FROM node:5
 
 COPY . /app
 
-RUN cd /app; npm install; npm install -g coffee-script
+RUN cd /app; npm install;
 
-CMD ["coffee", "/app/src/app.coffee"]
+CMD ["node", "/app/src/app.js"]
